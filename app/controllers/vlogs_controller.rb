@@ -1,5 +1,6 @@
 class VlogsController < ApplicationController
   before_action :set_vlog, only: [:show, :edit, :update, :destroy]
+  layout "vlog"
 
   # GET /vlogs
   # GET /vlogs.json
