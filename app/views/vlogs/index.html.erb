@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vlogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Nicolas avatar</th>
+      <th>Description</th>
+      <th>Youtube link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vlogs.each do |vlog| %>
+      <tr>
+        <td><%= vlog.title %></td>
+        <td><%= vlog.nicolas_avatar %></td>
+        <td><%= vlog.description %></td>
+        <td><%= vlog.youtube_link %></td>
+        <td><%= link_to 'Show', vlog %></td>
+        <td><%= link_to 'Edit', edit_vlog_path(vlog) %></td>
+        <td><%= link_to 'Destroy', vlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vlog', new_vlog_path %>
