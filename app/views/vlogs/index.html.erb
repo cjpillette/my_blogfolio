@@ -1,33 +1,154 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vlogs</h1>
+<div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Nicolas avatar</th>
-      <th>Description</th>
-      <th>Youtube link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Vlog
+                <small>My bootcamp journey</small>
+            </h1>
+        </div>
+    </div>
+    <%= link_to 'New Vlog', new_vlog_path %>
 
-  <tbody>
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/300x200" alt="">
+            </a>
+            <h3>
+                <a href="#">Project Name</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/300x200" alt="">
+            </a>
+            <h3>
+                <a href="#">Project Name</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/300x200" alt="">
+            </a>
+            <h3>
+                <a href="#">Project Name</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Projects Row -->
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/300x200" alt="">
+            </a>
+            <h3>
+                <a href="#">Project Name</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/300x200" alt="">
+            </a>
+            <h3>
+                <a href="#">Project Name</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/300x200" alt="">
+            </a>
+            <h3>
+                <a href="#">Project Name</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+    </div>
+
+    <!-- Projects Row -->
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/300x200" alt="">
+            </a>
+            <h3>
+                <a href="#">Project Name</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/300x200" alt="">
+            </a>
+            <h3>
+                <a href="#">Project Name</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/300x200" alt="">
+            </a>
+            <h3>
+                <a href="#">Project Name</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Pagination -->
+    <div class="row text-center">
+        <div class="col-lg-12">
+            <ul class="pagination">
+                <li>
+                    <a href="#">&laquo;</a>
+                </li>
+                <li class="active">
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">&raquo;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+
+</div>
+
     <% @vlogs.each do |vlog| %>
-      <tr>
-        <td><%= vlog.title %></td>
-        <td><%= vlog.nicolas_avatar %></td>
-        <td><%= vlog.description %></td>
-        <td><%= vlog.youtube_link %></td>
-        <td><%= link_to 'Show', vlog %></td>
-        <td><%= link_to 'Edit', edit_vlog_path(vlog) %></td>
-        <td><%= link_to 'Destroy', vlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+    <%= vlog.title %>
+    <%= vlog.nicolas_avatar %>
+    <%= vlog.description %>
+    <%= vlog.youtube_link %>
+    <%= link_to 'Show', vlog %>
+    <%= link_to 'Edit', edit_vlog_path(vlog) %>
+    <%= link_to 'Destroy', vlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
     <% end %>
-  </tbody>
-</table>
 
 <br>
-
-<%= link_to 'New Vlog', new_vlog_path %>
