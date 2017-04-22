@@ -21,13 +21,19 @@
                 <p class="card-text"><%= vlog.description %></p>
                 <p class="card-text"><%= vlog.youtube_link %></p>
                 <a href="#" class="btn btn-primary">Rating</a>
-                <%= link_to 'Show', vlog %>
-                <%= link_to 'Edit', edit_vlog_path(vlog) %>
-                <%= link_to 'Destroy', vlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <%= link_to vlog do %>
+                  <%= fa_icon "eye" %>
+                <% end %>
+                <%= link_to edit_vlog_path(vlog) do %>
+                  <%= fa_icon "pencil" %>
+                <% end %>
+                <%= link_to vlog, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <%= fa_icon "trash" %>
+                <% end %>
               </div>
             </div>
           </div>
-            <% end %>
+        <% end %>
 
         </div>
     </div>
