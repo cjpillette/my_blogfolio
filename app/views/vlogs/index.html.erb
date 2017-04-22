@@ -1,33 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vlogs</h1>
+<div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Nicolas avatar</th>
-      <th>Description</th>
-      <th>Youtube link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Vlog
+                <small>My bootcamp journey</small>
+            </h1>
+        </div>
+    </div>
+    <%= link_to 'New Vlog', new_vlog_path %>
 
-  <tbody>
-    <% @vlogs.each do |vlog| %>
-      <tr>
-        <td><%= vlog.title %></td>
-        <td><%= vlog.nicolas_avatar %></td>
-        <td><%= vlog.description %></td>
-        <td><%= vlog.youtube_link %></td>
-        <td><%= link_to 'Show', vlog %></td>
-        <td><%= link_to 'Edit', edit_vlog_path(vlog) %></td>
-        <td><%= link_to 'Destroy', vlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="row">
+      <% @vlogs.each do |vlog| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+            <div class="card" style="width: 20rem;">
+              <%= image_tag(vlog.avatar_url.to_s) %>
+              <div class="card-block">
+                <h4 class="card-title"> <%= vlog.title %></h4>
+                <p class="card-text"><%= vlog.description %></p>
+                <%= link_to vlog.youtube_link, target: :_blank do %>
+                  <%= fa_icon "youtube" %>
+                <% end %>
+                <a href="#" class="btn btn-primary">Rating</a>
+                <%= link_to vlog do %>
+                  <%= fa_icon "eye" %>
+                <% end %>
+                <%= link_to edit_vlog_path(vlog) do %>
+                  <%= fa_icon "pencil" %>
+                <% end %>
+                <%= link_to vlog, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <%= fa_icon "trash" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        </div>
+    </div>
 
-<br>
+    <hr>
+    <%= paginate @vlogs %>
+    <hr>
 
-<%= link_to 'New Vlog', new_vlog_path %>
+</div>

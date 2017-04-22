@@ -1,10 +1,11 @@
 class VlogsController < ApplicationController
   before_action :set_vlog, only: [:show, :edit, :update, :destroy]
+  layout "vlog"
 
   # GET /vlogs
   # GET /vlogs.json
   def index
-    @vlogs = Vlog.all
+    @vlogs = Vlog.all.order(created_at: :desc).page(params[:page]).per(6)
   end
 
   # GET /vlogs/1
@@ -69,6 +70,6 @@ class VlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vlog_params
-      params.require(:vlog).permit(:title, :nicolas_avatar, :description, :youtube_link)
+      params.require(:vlog).permit(:title, :nicolas_avatar, :description, :youtube_link, :avatar)
     end
 end
