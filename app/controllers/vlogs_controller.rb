@@ -5,7 +5,7 @@ class VlogsController < ApplicationController
   # GET /vlogs
   # GET /vlogs.json
   def index
-    @vlogs = Vlog.all.order(created_at: :desc)
+    @vlogs = Vlog.all.order(created_at: :desc).page(params[:page]).per(6)
   end
 
   # GET /vlogs/1
