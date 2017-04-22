@@ -21,6 +21,12 @@
     <%= f.text_area :body %>
   </div>
 
+    <%= f.fields_for :topic, Topic.new do |topic| %>
+      <%= topic.label :title %>
+      <%= topic.text_field :title %>
+    <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
