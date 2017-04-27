@@ -12,8 +12,17 @@
       <p>
         <%= blog.body %>
       </p>
+      <p><%= blog.topic.title %></p>
     </div>
   <% end %>
+
+  <div>List of all the topics already created
+    <p><% @topics.each do |topic| %>
+      <%= topic %>
+      <hr>
+      <% end %>
+    </p>
+  </div>
 
   <hr>
   <%= paginate @blogs %>
