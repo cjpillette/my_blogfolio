@@ -1,0 +1,14 @@
+<div>List of all the topics already created
+  <div class="row">
+    <p><% @topics.each do |topic| %>
+      <div class="col-md-4 col-xs-12">
+        <div class="card">
+          <div class="card-block">
+            <%= topic %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  </p>
+</div>
