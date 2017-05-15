@@ -1,29 +1,16 @@
 <h1>Blogs</h1>
 <div class="row">
   <div class="col-md-9 col-sm-7 col-sm-12">
+    <%= link_to 'All blogs', blogs_path, class: 'btn btn-primary' %>
+    <% if current_user.role == 'admin' %>
     <%= link_to 'New Blog', new_blog_path, class: 'btn btn-primary' %>
+    <% end %>
 
     <% @blogs.each do |blog| %>
-      <div class="blog-post">
-        <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
-        <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
-          <p class="blog-post-meta">
-          <% if current_user.role == 'admin' %>
-          <%= link_to fa_icon('eye'), blog %>
-          <%= link_to fa_icon('pencil-square-o'), edit_blog_path(blog) %>
-          <%= link_to fa_icon('trash'), blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-          </p>
-        <p>
-          <%= blog.body %>
-        </p>
-        <% if blog.topic.present? %>
-        <p><%= blog.topic.title %>
-        <% end %>
-        </p>
-      </div>
+      <%= render "blog", :blog => blog %>
     <% end %>
   </div>
+
   <div class="col-md-3 col-sm-5 col-xs-12">
   <% if current_user.role == 'admin' %>
   <%= link_to 'Topics', topics_path, class: 'btn btn-info' %>
