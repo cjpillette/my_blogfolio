@@ -25,3 +25,7 @@ puts "5 blogs were created"
 end
 
 puts "9 portfolio items were created"
+
+user = User.create! :name => 'Carole', :email => 'cjpillette@hotmail.com', :password => 'topsecret', :password_confirmation => 'topsecret', :role => 'admin'
+
+puts "Carole profile created"
