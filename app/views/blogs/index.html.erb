@@ -33,6 +33,7 @@
     <div class="card">
       <div class="card-block">
         <%= topic.title %>
+        <%= topic.id %>
         <%= image_tag(topic.avatar_url.to_s, class: 'smallies') %>
         <%= link_to 'See related blogs', blogs_path(topic_id: topic.id), class: 'btn btn-danger' %>
         <% if current_user.role == 'admin' %>
