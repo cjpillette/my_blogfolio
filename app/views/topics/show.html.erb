@@ -5,5 +5,9 @@
   <%= @topic.title %>
 </p>
 
+<%= image_tag(@topic.avatar_url.to_s, class: 'smallies') %>
+
+
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Back', topics_path %> |
+<%= link_to 'Delete', @topic, method: :delete, data: { confirm: 'Are you sure?' } %>

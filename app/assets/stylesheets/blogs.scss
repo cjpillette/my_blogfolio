@@ -1,9 +1,9 @@
 // Place all the styles related to the Blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import "bootstrap";
 @import "font-awesome";
+
 
 @media (min-width: 48em) {
   html {
@@ -83,7 +83,19 @@ h6, .h6 {
   background-color: blue;
 }
 
+.bg-pink {
+  background-color: pink;
+}
 
+.smallies {
+  width: 50px;
+  height: 50px;
+}
+
+.smallies100 {
+  width: 100px;
+  height: 100px;
+}
 /*
  * Blog name and description
  */

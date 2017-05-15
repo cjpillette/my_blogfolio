@@ -3,6 +3,7 @@ class Topic < ApplicationRecord
 
   has_many :blogs
 
-  scope :unique_title, -> { Topic.uniq.pluck(:title)}
+  # scope :unique_title, -> { Topic.uniq.pluck(:title)}
+  mount_uploader :avatar, AvatarUploader
 
 end

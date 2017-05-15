@@ -11,13 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <%= f.label :icon, "Technology icon" %>
+    <%= f.file_field :avatar, class: 'form-control' %>
   </div>
+
+  <%= f.submit 'Save Topic', class: 'btn btn-primary' %>
+
 <% end %>

@@ -1,29 +1,38 @@
 <h1>Blogs</h1>
-  <%= link_to 'New Blog', new_blog_path %>
-  <% @blogs.each do |blog| %>
-    <div class="blog-post">
-      <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
-      <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
-        <p class="blog-post-meta">
-        <%= link_to 'Show', blog %>
-        <%= link_to 'Edit', edit_blog_path(blog) %>
-        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="row">
+  <div class="col-md-9 col-sm-7 col-sm-12">
+    <%= link_to 'New Blog', new_blog_path, class: 'btn btn-primary' %>
+
+    <% @blogs.each do |blog| %>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
+        <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
+          <p class="blog-post-meta">
+          <%= link_to 'Show', blog %>
+          <%= link_to 'Edit', edit_blog_path(blog) %>
+          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </p>
+        <p>
+          <%= blog.body %>
         </p>
-      <p>
-        <%= blog.body %>
-      </p>
-      <p><%= blog.topic.title %></p>
-    </div>
-  <% end %>
-
-  <div>List of all the topics already created
-    <p><% @topics.each do |topic| %>
-      <%= topic %>
-      <hr>
-      <% end %>
-    </p>
+        <p><%= blog.topic.title %>
+        </p>
+      </div>
+    <% end %>
   </div>
+  <div class="col-md-3 col-sm-5 col-xs-12">
+    <%= link_to 'Topics', topics_path, class: 'btn btn-info' %>
 
+    <% @topics.each do |topic| %>
+      <div class="card">
+        <div class="card-block">
+          <%= link_to topic.title, topic_path(topic.id) %>
+          <%= image_tag(topic.avatar_url.to_s, class: 'smallies') %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
   <hr>
   <%= paginate @blogs %>
   <hr>

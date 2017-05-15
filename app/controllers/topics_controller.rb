@@ -2,27 +2,20 @@ class TopicsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   layout "blog"
 
-  # GET /blogs
-  # GET /blogs.json
   def index
-    @topics = Topic.unique_title
+    @topics = Topic.all
   end
-
 
   def show
   end
 
-  # GET /blogs/new
   def new
     @topic = Topic.new
   end
 
-  # GET /blogs/1/edit
   def edit
   end
 
-  # POST /blogs
-  # POST /blogs.json
   def create
     @topic = Topic.new(topic_params)
 
@@ -37,8 +30,7 @@ class TopicsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
+
   def update
     respond_to do |format|
       if @topic.update(topic_params)
@@ -51,8 +43,6 @@ class TopicsController < ApplicationController
     end
   end
 
-  # DELETE /blogs/1
-  # DELETE /blogs/1.json
   def destroy
     @topic.destroy
     respond_to do |format|
@@ -69,6 +59,6 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:title)
+      params.require(:topic).permit(:title, :icon, :avatar)
     end
 end
