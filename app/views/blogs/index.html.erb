@@ -15,7 +15,9 @@
         <p>
           <%= blog.body %>
         </p>
+        <% if blog.topic.present? %>
         <p><%= blog.topic.title %>
+        <% end %>
         </p>
       </div>
     <% end %>
@@ -28,6 +30,7 @@
         <div class="card-block">
           <%= link_to topic.title, topic_path(topic.id) %>
           <%= image_tag(topic.avatar_url.to_s, class: 'smallies') %>
+          <%= link_to "See blogs", blogs_path, class: 'btn btn-success' %>
         </div>
       </div>
     <% end %>
