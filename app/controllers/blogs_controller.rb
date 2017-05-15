@@ -5,7 +5,12 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @topics = Topic.all
+    @blogs = Blog.all.order(created_at: :desc).page(params[:page]).per(5)
+    if params[:topic_id].present?
+      # Filter down to include only with a certain topic
+      @blogs = @blogs.where(topic_id: params[:topic_id])
+    end
   end
 
   # GET /blogs/1
@@ -16,10 +21,12 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    #@blog.build_topic
   end
 
   # GET /blogs/1/edit
   def edit
+
   end
 
   # POST /blogs
@@ -70,6 +77,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
 end

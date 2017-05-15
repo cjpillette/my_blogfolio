@@ -1,29 +1,50 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Blogs</h1>
+<div class="row">
+  <div class="col-md-9 col-sm-7 col-sm-12">
+    <%= link_to 'New Blog', new_blog_path, class: 'btn btn-primary' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
+        <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
+          <p class="blog-post-meta">
+          <% if current_user.role == 'admin' %>
+          <%= link_to fa_icon('eye'), blog %>
+          <%= link_to fa_icon('pencil-square-o'), edit_blog_path(blog) %>
+          <%= link_to fa_icon('trash'), blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          </p>
+        <p>
+          <%= blog.body %>
+        </p>
+        <% if blog.topic.present? %>
+        <p><%= blog.topic.title %>
+        <% end %>
+        </p>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="col-md-3 col-sm-5 col-xs-12">
+  <% if current_user.role == 'admin' %>
+  <%= link_to 'Topics', topics_path, class: 'btn btn-info' %>
+  <% end %>
 
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+  <% @topics.each do |topic| %>
+    <div class="card">
+      <div class="card-block">
+        <%= topic.title %>
+        <%= topic.id %>
+        <%= image_tag(topic.avatar_url.to_s, class: 'smallies') %>
+        <%= link_to 'See related blogs', blogs_path(topic_id: topic.id), class: 'btn btn-danger' %>
+        <% if current_user.role == 'admin' %>
+        <%= link_to fa_icon('pencil-square-o'), edit_topic_path(topic)  %>
+        <%= link_to fa_icon('trash'), topic, method: :delete, data: { confirm: 'Are you sure?' }  %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+  <hr>
+  <%= paginate @blogs %>
+  <hr>

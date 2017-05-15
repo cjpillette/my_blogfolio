@@ -1,0 +1,22 @@
+<div>List of all the topics already created
+
+<%= link_to "New Topic", new_topic_path, class: 'btn btn-primary' %>
+
+  <div class="row">
+    <p><% @topics.each do |topic| %>
+      <div class="col-md-4 col-xs-12">
+        <div class="card">
+          <div class="card-block">
+            <%= link_to topic.title, topic_path(topic.id) %>
+            <%= image_tag(topic.avatar_url.to_s, class: 'smallies') %>
+            <% if current_user.role == 'admin' %>
+            <%= link_to fa_icon('pencil-square-o'), edit_topic_path(topic)  %>
+            <%= link_to fa_icon('trash'), topic, method: :delete, data: { confirm: 'Are you sure?' }  %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  </p>
+</div>
