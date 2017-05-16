@@ -12,7 +12,7 @@
     <%= link_to fa_icon('trash'), portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
 
-    <p><%= portfolio.description %></p> 
+    <p><%= markdown(portfolio.description) %></p> 
                      
   </div>      
 </div>
