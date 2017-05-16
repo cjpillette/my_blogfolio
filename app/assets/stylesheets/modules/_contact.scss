@@ -1,0 +1,49 @@
+@media screen and (min-width: 500px){
+  .melbourne-contact {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    margin-top: 100px;
+  }
+}
+  
+.contact-title {
+  text-align: center;
+}
+
+.form-contact {
+  text-align: center;
+}
+
+.form-contact {
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 300px;
+  z-index: 2;
+  margin-top: 30px;
+}
+
+.melbourne-wrapper {
+  position: relative;
+  height: 300px;
+  overflow: visible;
+}
+
+.email-box {
+  height: 28px;
+  width: 295px;
+  margin: auto;
+  margin-bottom: 0.625rem;
+}
+
+.message-box {
+  height: 105px;
+  text-align: top;
+  overflow: auto;
+  width: 295px;
+  margin: auto;
+  margin-bottom: 0.625rem;
+}
