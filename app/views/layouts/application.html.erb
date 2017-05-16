@@ -2,6 +2,12 @@
 <html>
   <head>
     <title>My blogfolio | Carole Pillette</title>
+    <title>My Portfolio</title>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -23,7 +29,7 @@
     <% end %>
 
     <%= yield %>
+      <%= render "shared/footer" %> 
 
-    <%= render "shared/footer" %>
   </body>
 </html>
