@@ -2,5 +2,9 @@
 
 <%= render 'form', portfolio: @portfolio %>
 
-<%= link_to 'Show', @portfolio %> |
-<%= link_to 'Back', portfolios_path %>
+<% if current_user.role == 'admin' %>
+  <%= link_to fa_icon('eye'), portfolio_path(@portfolio) %>
+  <%= link_to fa_icon('arrow-left'), portfolios_path %>
+<% end %>
+
+

@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.all.order(created_at: :desc)
   end
 
   # GET /portfolios/1
@@ -69,6 +69,6 @@ class PortfoliosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portfolio_params
-      params.require(:portfolio).permit(:avatar, :description)
+      params.require(:portfolio).permit(:avatar, :description, :title)
     end
 end
