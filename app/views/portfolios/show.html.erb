@@ -1,14 +1,1 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Avatar:</strong>
-  <%= @portfolio.avatar %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @portfolio.description %>
-</p>
-
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %>
+<%= render 'portfolio', portfolio: @portfolio %>

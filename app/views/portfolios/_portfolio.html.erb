@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <%= image_tag(portfolio.avatar_url.to_s, style: "max-width: 100%") %>
+  </div>
+
+  <div class="col-xs-12 col-sm-6">
+    <h2><%= portfolio.title %></h2>
+
+    <% if current_user.role == 'admin' %>
+    <%= link_to fa_icon('eye'), portfolio_path(portfolio) %>
+    <%= link_to fa_icon('pencil-square-o'), edit_portfolio_path(portfolio) %>
+    <%= link_to fa_icon('trash'), portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+
+    <p><%= portfolio.description %></p> 
+                     
+  </div>      
+</div>
