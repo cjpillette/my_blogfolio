@@ -11,12 +11,6 @@
       <%= link_to "Blog", blogs_path, class: 'nav-item nav-link' %>
       <%= link_to "Vlog", vlogs_path, class: 'nav-item nav-link' %>
       <%= link_to "Portfolio", portfolios_path, class: 'nav-item nav-link' %>
-      <% if current_user %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class: 'nav-item nav-link' %>
-        <%= link_to "Register", new_user_registration_path, class: 'nav-item nav-link' %>
-      <% end %>
     </div>
   </div>
 </nav>

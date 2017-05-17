@@ -1,0 +1,53 @@
+@import "base/_variables";
+@import "base/_responsive";
+@import "base/_global";
+
+.about-container {
+  width: 90%;
+  margin: auto;
+  position: relative;
+  padding-bottom: 3.125rem;
+}
+
+.about-description {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.large-window {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  background-image: url('model8.jpg');
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-radius: 50%;
+  margin-top: 40px;
+}
+
+.learn-more-button {
+  background-color: $main-red;
+  width: 30%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: white;
+  border: 0;
+  margin-top: 1.875rem;
+  border-radius: 0.625rem;
+  box-shadow: 0.0625rem 0.125rem 0.25rem rgba(0, 0, 0, .5);
+}
+
+.learn-more-button:hover {
+  color: white;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, .5);
+}
