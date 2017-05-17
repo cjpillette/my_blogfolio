@@ -47,7 +47,8 @@ p:last-child {
   background-repeat: no-repeat;
   background-position: center;
   margin: auto;
-  left: 48%;
+  left: 50%;
+  transform: translateX(-50%);
   top: 95%;
 }
 
