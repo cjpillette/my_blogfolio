@@ -7,12 +7,25 @@
     position: absolute;
     width: 100%;
     z-index: 1;
-    margin-top: 100px;
   }
+}
+
+.envelope-modal {
+  width: 50px;;
+  height: 50px;
+  background-image: url('envelope.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  transform:translateX(-50%);
+  top: 20%;
+  ;
 }
   
 .contact-title {
   text-align: center;
+  margin-bottom: 100px;
 }
 
 .form-contact {

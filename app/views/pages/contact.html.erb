@@ -2,15 +2,30 @@
   <h1 class="contact-title">Contact</h1>
   <%= image_tag('contact-background.png', class: 'melbourne-contact img-fluid') %>
 
-  <div class="form-contact">
-    <form action="https://formspree.io/cjpillette@gmail.com"
-          method="POST">
-          <div class="form-group">
-          <input class="email-box boxed form-control" type="email" placeholder="Your email address"/>
-          <textarea class="message-box boxed form-control" type="text" placeholder="Enter your message here..."></textarea>
-          <input class="btn btn-primary" type="submit" value="SEND" />
+  <!-- Button trigger modal -->
+<button type="button" class="envelope-modal" data-toggle="modal" data-target="#myModal">
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <form action="https://formspree.io/cjpillette@gmail.com" method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <input type="email" name="_replyto" placeholder="Enter email" required />
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-    </form>
+      </form>
+      <div class="modal-body">
+      <textarea style="width: 100%;" type="text" name="name" placeholder="Type your message here"></textarea>
+      </div>
+      <div class="modal-footer">
+        <input class="btn btn-outline-primary" type="submit" value="Send">
+      </div>
+    </div>
   </div>
-
-
+</div>

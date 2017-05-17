@@ -1,8 +1,8 @@
 <h1>Blogs</h1>
 <div class="row">
-  <div class="col-md-9 col-sm-7 col-sm-12">
+  <div class="col-md-9 col-sm-7 col-xs-12">
     <%= link_to 'All blogs', blogs_path, class: 'btn btn-primary' %>
-    <% if current_user.role == 'admin' %>
+    <% if user_signed_in? %>
     <%= link_to 'New Blog', new_blog_path, class: 'btn btn-primary' %>
     <% end %>
 
@@ -12,7 +12,7 @@
   </div>
 
   <div class="col-md-3 col-sm-5 col-xs-12">
-  <% if current_user.role == 'admin' %>
+  <% if user_signed_in? %>
   <%= link_to 'Topics', topics_path, class: 'btn btn-info' %>
   <% end %>
 
@@ -23,7 +23,7 @@
         <%= topic.id %>
         <%= image_tag(topic.avatar_url.to_s, class: 'smallies') %>
         <%= link_to 'See related blogs', blogs_path(topic_id: topic.id), class: 'btn btn-danger' %>
-        <% if current_user.role == 'admin' %>
+        <% if user_signed_in? %>
         <%= link_to fa_icon('pencil-square-o'), edit_topic_path(topic)  %>
         <%= link_to fa_icon('trash'), topic, method: :delete, data: { confirm: 'Are you sure?' }  %>
         <% end %>
@@ -32,6 +32,6 @@
   <% end %>
   </div>
 </div>
-  <hr>
-  <%= paginate @blogs %>
-  <hr>
+<hr>
+<%= paginate @blogs %>
+<hr>

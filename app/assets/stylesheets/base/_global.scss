@@ -42,3 +42,10 @@ input:focus, textarea:focus {
   border:1px solid $main-red;
   box-shadow: 0 0 5px $main-red;
 }
+
+button {
+  background: none;
+  border: none;
+}
+
+

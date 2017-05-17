@@ -15,3 +15,62 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+$(document).on('click', 'a[href^="#"]', function(e) {
+    // target element id
+    var id = $(this).attr('href');
+    var nav = $('#navigation').height();
+
+
+    // target element
+    var $id = $(id);
+    if ($id.length === 0) {
+        return;
+    }
+
+    // prevent standard hash navigation (avoid blinking in IE)
+    e.preventDefault();
+
+    // top position relative to the document
+    var pos = $id.offset().top - nav;
+
+    // animated top scrolling
+    $('body, html').animate({scrollTop: pos});
+
+});
+
+//scroll to the top of the page
+$(document).scroll(function(){
+      $(".arrow-up").on("click", function() {
+        $("body").scrollTop(0)
+      });
+    });
+
+
+//parallax effects
+$(window).scroll(function(){
+  var wScroll = $(this).scrollTop();
+
+//hero
+  $('.hero-description').css({
+    'transform': 'translate(0px, -'+ wScroll /20 +'% )',
+    'opacity': 30/ (wScroll + 1) - 0.1
+  });
+
+  $('.artist-drawing').css({
+    'transform': 'translate(0px, '+ wScroll /50 +'% )',
+    'opacity': (wScroll /200)
+  });
+
+  $('.engineer-drawing').css({
+    'transform': 'translate(0px, -'+ wScroll /40 +'% )',
+    'opacity': (wScroll /200),
+    'transform': 'scale(1.'+ wScroll / 100 +')'
+  });
+
+  $('.developer-drawing').css({
+    'transform': 'translate(0px, -'+ wScroll /22 +'% )',
+    'opacity': (wScroll /200),
+    'transform': 'scale(1.'+ wScroll / 100 +')'
+  });
+
+});

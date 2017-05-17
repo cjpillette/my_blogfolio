@@ -6,7 +6,7 @@
   <div class="col-xs-12 col-sm-6">
     <h2><%= portfolio.title %></h2>
 
-    <% if current_user.role == 'admin' %>
+    <% if user_signed_in? %>
     <%= link_to fa_icon('eye'), portfolio_path(portfolio) %>
     <%= link_to fa_icon('pencil-square-o'), edit_portfolio_path(portfolio) %>
     <%= link_to fa_icon('trash'), portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
