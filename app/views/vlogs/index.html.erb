@@ -1,19 +1,18 @@
 <div class="container">
-
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">
-                <small>My bootcamp journey</small>
-            </h1>
+            <h1 class="section-title-no-margin">Vlogs</h1>
         </div>
     </div>
-    <% if user_signed_in? %>
-    <%= link_to 'New Vlog', new_vlog_path %>
-    <% end %>
+    <div class="btn-center">
+      <% if user_signed_in? %>
+      <%= link_to 'New Vlog', new_vlog_path, class: 'btn btn-outline-info btn-margin-bottom' %>
+      <% end %>
+    </div>
 
     <div class="row">
       <% @vlogs.each do |vlog| %>
-      <%= render 'vlog', vlog: vlog %>        
+      <%= render 'vlog', vlog: vlog %>
       <% end %>
     </div>
 </div>

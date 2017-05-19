@@ -2,9 +2,6 @@
 @import "base/_responsive";
 @import "base/_global";
 
-.card-text-center{
-  text-align: center;
-}
 
 .blog-post-meta {
   color: $light-grey;
@@ -15,11 +12,4 @@
 
 .blog-post-title {
   margin-left: 20px;
-}
-
-.small-card {
-  max-width: 280px;
-  margin: auto;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

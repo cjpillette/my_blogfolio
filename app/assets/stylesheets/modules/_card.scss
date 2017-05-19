@@ -1,0 +1,26 @@
+@import "base/_variables";
+@import "base/_responsive";
+@import "base/_global";
+
+.card-text-center{
+  text-align: center;
+}
+
+.small-card {
+  max-width: 280px;
+  margin: auto;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-no-left-margin {
+    margin: auto
+}
+
+.card-block-no-bottom-padding {
+  padding-bottom: 0;
+}
+
+.card-small-bottom-margin {
+  margin-bottom: 7px;
+}

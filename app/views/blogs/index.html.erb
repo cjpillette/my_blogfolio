@@ -2,8 +2,9 @@
 <div class="row">
   <div class="col-md-9 col-sm-7 col-xs-12">
     <div class="btn-center">
+      <%= link_to 'Show all blogs', blogs_path, class: 'btn btn-info btn-margin-bottom' %>
       <% if user_signed_in? %>
-      <%= link_to 'New Blog', new_blog_path, class: 'btn btn-danger btn-margin-bottom' %>
+      <%= link_to 'New Blog', new_blog_path, class: 'btn btn-outline-info btn-margin-bottom' %>
       <% end %>
     </div>
 
@@ -12,7 +13,9 @@
     <% end %>
   </div>
 
-  <%= paginate @blogs %>
+  <div class="pagination">
+    <%= paginate @blogs %>
+  </div>
 
 
   <div class="col-md-3 col-sm-5 col-xs-12">
