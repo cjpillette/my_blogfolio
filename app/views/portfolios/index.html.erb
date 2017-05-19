@@ -1,6 +1,6 @@
 <h1 class="section-title-no-margin">Portfolios</h1>
 <% if user_signed_in? %>
-<div class="new-portfolio">
+<div class="btn-center">
   <%= link_to 'New Portfolio', new_portfolio_path, class: 'btn btn-outline-primary' %>
   <% end %>
 </div>
@@ -8,5 +8,5 @@
 <% @portfolios.each do |portfolio| %>
   <%= render 'portfolio', portfolio: portfolio %>
 <% end %>
- 
+
 <%= paginate @portfolios %>

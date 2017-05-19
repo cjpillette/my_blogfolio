@@ -1,0 +1,25 @@
+@import "base/_variables";
+@import "base/_responsive";
+@import "base/_global";
+
+.card-text-center{
+  text-align: center;
+}
+
+.blog-post-meta {
+  color: $light-grey;
+  font-style: italic;
+  margin-left: 35px;
+  margin-bottom: 5px;
+}
+
+.blog-post-title {
+  margin-left: 20px;
+}
+
+.small-card {
+  max-width: 280px;
+  margin: auto;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

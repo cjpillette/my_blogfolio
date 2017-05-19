@@ -5,8 +5,9 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @topics = Topic.all
     @blogs = Blog.all.order(created_at: :desc).page(params[:page]).per(5)
+    @topics = Topic.all
+        
     if params[:topic_id].present?
       # Filter down to include only with a certain topic
       @blogs = @blogs.where(topic_id: params[:topic_id])

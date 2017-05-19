@@ -1,6 +1,5 @@
 class TopicsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  layout "blog"
 
   def index
     @topics = Topic.all.order(created_at: :desc)
