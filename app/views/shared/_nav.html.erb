@@ -1,6 +1,28 @@
-<%= link_to image_tag('cpHome.svg'), root_path %>
-<%= link_to "About", about_me_path %>
-<%= link_to "Contact", contact_path %>
-<%= link_to "Blog", blogs_path %>
-<%= link_to "Vlog", vlogs_path %>
-<%= link_to "Portfolio", portfolios_path %>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to image_tag('cpHome.svg'), root_path %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "About", about_me_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Contact", contact_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Blog", blogs_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Vlog", vlogs_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Portfolio", portfolios_path %>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
