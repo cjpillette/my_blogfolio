@@ -3,6 +3,11 @@
     <%= image_tag(vlog.avatar_url.to_s, class: "smallies") %>
       <div class="card-block">
         <h4 class="card-title"> <%= vlog.title %></h4>
+          <% if user_signed_in? %>
+          <%= link_to fa_icon('eye'), vlog_path(vlog) %>
+          <%= link_to fa_icon('pencil-square-o'), edit_vlog_path(vlog) %>
+          <%= link_to fa_icon('trash'), vlog, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
         <p class="card-text"><%= markdown(vlog.description) %></p>
         <%= link_to vlog.youtube_link, target: :_blank do %>
         <%= fa_icon "youtube" %>

@@ -2,7 +2,7 @@
 
 <%= render 'form', portfolio: @portfolio %>
 
-<% if current_user.role == 'admin' %>
+<% if user_signed_in? %>
   <%= link_to fa_icon('eye'), portfolio_path(@portfolio) %>
   <%= link_to fa_icon('arrow-left'), portfolios_path %>
 <% end %>
