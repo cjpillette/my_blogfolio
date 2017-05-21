@@ -1,0 +1,22 @@
+@import "base/_variables";
+@import "base/_responsive";
+@import "base/_global";
+
+.carousel-content {
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+.carousel-item {
+  height: 220px;
+}
+
+.carousel-item p {
+  text-align: center;
+}

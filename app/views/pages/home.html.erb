@@ -65,10 +65,14 @@
         <div class="carousel-inner" role="listbox">
           <% @portfolios.each_with_index do |portfolio, index| %>
           <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
-            <%= image_tag (portfolio.avatar_url.to_s), class: 'd-block img-fluid' %>
+            <%= image_tag (portfolio.avatar_url.to_s), class: 'd-block img-fluid' %><br>
+            <div class="carousel-content">
+              <p><%= link_to portfolio.title, portfolio_path(portfolio), class: 'white-text' %></p>
+            </div>
           </div>
           <% end %>
         </div>
+
 
         <a class="carousel-control-prev" href="#myCarousel1" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
