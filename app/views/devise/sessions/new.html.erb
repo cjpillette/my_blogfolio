@@ -12,14 +12,13 @@
           <%= f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control' %>
         </div>
 
-        <div style="float: right;">
         <% if devise_mapping.rememberable? -%>
-          <div class="form-group text-align-right">
-            <%= f.check_box :remember_me, class: 'form-control' %>
-            <%= f.label :remember_me, class: 'white-text' %>
-          </div>
-        <% end %>
+        <div class="form-check text-align-right">
+          <% f.label :remember_me, class: "form-check-label" %>
+          <%= f.check_box :remember_me, class: "form-check-input" %>
+        <span class="white-text">Remember me</span>
         </div>
+        <% end %>
 
         <div class="actions btn btn-danger white-text-on-button login-red-button">
           <%= f.submit "Log in" %>
