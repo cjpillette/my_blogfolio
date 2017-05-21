@@ -11,22 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar, class: 'form-control' %>
+  <div class="form-group center">
+    <%= f.label :avatar, " Attach file", class: 'fa fa-cloud-upload btn btn-outline-success'  %>
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control', rows: '10' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+<div class="commands">
+  <div class="row">
+    <div class="col-6 center">
+    <div class="actions btn btn-success update-portfolio-button">
+      <%= f.submit %>
+    </div>
   </div>
-<% end %>
+  <% end %>
+
+    <div class="col-6 center">
+      <% if user_signed_in? %>
+        <%= link_to fa_icon('eye'), portfolio_path(@portfolio), class: 'btn btn-outline-secondary btn-outline-black' %>
+        <%= link_to fa_icon('arrow-left'), portfolios_path, class: 'btn btn-outline-secondary btn-outline-black' %>
+      <% end %>
+    </div>
+  </div>
+</div>
