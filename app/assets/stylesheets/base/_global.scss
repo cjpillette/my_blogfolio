@@ -6,20 +6,20 @@ body {
 
 h1 {
   font-family: 'Sigmar One', cursive;
-  font-size: 2rem;
+  font-size: 28px;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 26px;
   font-weight: 400;
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 24px;
 }
 
 h4 {
-  font-size: 0.8rem;
+  font-size: 22px;
   font-weight: 200;
 }
 
@@ -48,6 +48,11 @@ button {
   border: none;
 }
 
+p {
+  text-align: left;
+  margin-bottom: 0;
+}
+
 .hidden {
   display: none;
 }
@@ -55,8 +60,4 @@ button {
 .center {
   text-align: center;
   margin: auto;
-}
-
-.container-95 {
-  max-width: 95%;
 }

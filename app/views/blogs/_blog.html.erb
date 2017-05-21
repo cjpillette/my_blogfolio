@@ -1,4 +1,4 @@
-<div class="blog-post">
+<div class="blog-post container-95 center">
   <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog_path(blog) %></h2>
   <div class="row">
       <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
@@ -9,18 +9,20 @@
       </p>
   </div>
 
-      <div class="container">
+
         <div class="row justify-content-md-center">
           <div class="col-12 col-md-auto text-center">
             <% if blog.topic.present? %>
             <%= image_tag(blog.topic.avatar_url.to_s, class: 'smallies') %>
             <% end %>
           </div>
-        </div>
-      </div>
 
-      <div class="col-12 col-md-auto">
-      <p><%= markdown(blog.body) %></p>
+        <div class="col-12 col-md-auto">
+          <%= markdown(HTML_Truncator.truncate(blog.body, 100)) %>
+          <div class="center">
+            <%= link_to 'Read more', blog_path(blog), class: 'btn btn-secondary' %>
+          </div>
+        </div>
       </div>
 </div>
 <hr>

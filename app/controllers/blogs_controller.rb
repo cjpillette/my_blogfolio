@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  require "html_truncator"
 
 
   # GET /blogs
@@ -7,7 +8,7 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all.order(created_at: :desc).page(params[:page]).per(5)
     @topics = Topic.all
-        
+
     if params[:topic_id].present?
       # Filter down to include only with a certain topic
       @blogs = @blogs.where(topic_id: params[:topic_id])
