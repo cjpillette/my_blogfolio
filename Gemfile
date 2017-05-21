@@ -62,3 +62,4 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'kaminari'
 gem 'cancancan', '~> 1.16'
 gem 'redcarpet', '~> 3.4'
+gem "html_truncator", "~>0.2"

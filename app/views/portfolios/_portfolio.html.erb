@@ -15,7 +15,8 @@
     <% end %>
   </div>
 
-    <p><%= markdown(portfolio.description) %></p>
+  <%= markdown(HTML_Truncator.truncate(portfolio.description, 100)) %>
+  <%= link_to 'Read more', portfolio_path(portfolio), class: 'btn btn-secondary' %>
 
   </div>
 </div>
