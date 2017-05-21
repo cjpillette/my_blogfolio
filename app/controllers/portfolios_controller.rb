@@ -1,10 +1,13 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  require "html_truncator"
+
+# => "<p>Lorem ipsum dolor…</p>"
 
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.all.order(created_at: :desc)
+    @portfolios = Portfolio.all.order(created_at: :desc).page(params[:page]).per(4)
   end
 
   # GET /portfolios/1

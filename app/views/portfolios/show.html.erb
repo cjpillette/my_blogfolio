@@ -1,1 +1,25 @@
-<%= render 'portfolio', portfolio: @portfolio %>
+<!-- <%= render 'portfolio', portfolio: @portfolio %> -->
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <%= image_tag(@portfolio.avatar_url.to_s, style: "max-width: 100%") %>
+  </div>
+
+<div class="container-90 center">
+  <div class="col-xs-12 col-sm-6 center title-padding-top">
+    <h2><%= @portfolio.title %></h2>
+
+  <div class="center">
+    <% if user_signed_in? %>
+    <%= link_to fa_icon('pencil-square-o'), edit_portfolio_path(@portfolio) %>
+    <%= link_to fa_icon('trash'), @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+
+  <p><%= markdown(@portfolio.description) %></p>
+
+  </div>
+  <%= link_to "Back to portfolio", portfolios_path, class: 'btn btn-secondary' %>
+</div>
+</div>
+<hr>

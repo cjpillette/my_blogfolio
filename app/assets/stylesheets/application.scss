@@ -1,2 +1,24 @@
 @import "bootstrap";
 @import "font-awesome";
+@-ms-viewport{
+  width: device-width;
+}
+
+@import "base/_variables";
+@import "base/_global";
+
+@import "modules/_about";
+@import "modules/_blog";
+@import "modules/_card";
+@import "modules/_contact";
+@import "modules/_footer";
+@import "modules/_hero";
+@import "modules/_icons";
+@import "modules/_more_about";
+@import "modules/_nav";
+@import "modules/_section";
+@import "modules/_vlog";
+@import "modules/_portfolio";
+@import "modules/_carousel";
+
+@import "base/_responsive";

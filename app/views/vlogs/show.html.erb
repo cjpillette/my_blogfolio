@@ -1,13 +1,1 @@
-<p id="notice"><%= notice %></p>
-
-<div class="card" style="max-width: 300px;">
-  <%= image_tag(@vlog.avatar_url.to_s) %>
-  <div class="card-block">
-    <h4 class="card-title"> <%= @vlog.title %></h4>
-    <p class="card-text"><%= @vlog.description %></p>
-    <p class="card-text"><%= @vlog.youtube_link %></p>
-  </div>
-</div>
-
-<%= link_to 'Edit', edit_vlog_path(@vlog) %> |
-<%= link_to 'Back', vlogs_path %>
+<%= render 'vlog', vlog: @vlog %>

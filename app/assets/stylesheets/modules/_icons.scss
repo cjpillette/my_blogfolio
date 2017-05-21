@@ -1,0 +1,80 @@
+@import "base/_variables";
+@import "base/_responsive";
+@import "base/_global";
+
+.smallies {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.red-about-me-icon {
+  margin-left: 20px;
+}
+
+.btn-margin-bottom {
+  margin-bottom: 5px;
+}
+
+.btn-center {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn-margin {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.btn-bold {
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+.btn-just-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+.btn-bold:hover {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+.btn-outline-black {
+  color: black;
+  border-color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.read-more-button {
+  margin-top: 15px;
+}
+
+.icon-hero {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.white-text-on-button input {
+  color: white;
+}
+
+.save-button-top-margin {
+  margin-top: 20px;
+}
+
+.save-button-bottom-margin {
+  margin-bottom: 20px;
+}
+
+.save-button-margin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.carrier-wave-field input {
+    color: red; /*or whatever you want to change*/
+}

@@ -1,13 +1,14 @@
-<h1>Portfolios</h1>
-<% if current_user.role == 'admin' %>
-<%= link_to 'New Portfolio', new_portfolio_path %>
-<% end %>
+<h1 class="section-title-no-margin">Portfolio</h1>
+<% if user_signed_in? %>
+<div class="btn-center">
+  <%= link_to 'New Portfolio Item', new_portfolio_path, class: 'btn btn-outline-primary' %>
+  <% end %>
+</div>
 
 <% @portfolios.each do |portfolio| %>
   <%= render 'portfolio', portfolio: portfolio %>
 <% end %>
- 
 
-<br>
-
-
+<div class="pagination">
+  <%= paginate @portfolios %>
+</div>

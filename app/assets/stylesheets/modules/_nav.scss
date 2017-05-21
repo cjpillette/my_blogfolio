@@ -1,0 +1,38 @@
+@import "base/_variables";
+@import "base/_responsive";
+@import "base/_global";
+
+
+.navbar {
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.bg-red {
+  background-color: $main-red;
+  color: $main-red;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-nav li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+nav .navbar {
+  border-bottom: 1px solid black;
+}
+
+.navbar .navbar-nav li:hover {
+  font-weight: bold;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}

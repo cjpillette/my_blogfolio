@@ -1,0 +1,13 @@
+<div class="card small-card">
+  <div class="card-block card-text-center">
+    <div>
+      <%= topic.title %>
+      <%= image_tag(topic.avatar_url.to_s, class: 'smallies') %>
+    </div>
+    <%= link_to 'Associated blogs', blogs_path(topic_id: topic.id), class: 'btn btn-secondary' %>
+    <% if user_signed_in? %>
+    <%= link_to fa_icon('pencil-square-o'), edit_topic_path(topic)  %>
+    <%= link_to fa_icon('trash'), topic, method: :delete, data: { confirm: 'Are you sure?' }  %>
+    <% end %>
+  </div>
+</div>

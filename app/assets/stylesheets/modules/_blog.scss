@@ -1,0 +1,20 @@
+@import "base/_variables";
+@import "base/_responsive";
+@import "base/_global";
+
+
+.blog-post-meta {
+  color: $light-grey;
+  font-style: italic;
+  margin-left: 35px;
+  margin-bottom: 5px;
+}
+
+.blog-post-title {
+  margin-left: 20px;
+}
+
+.topic-selection {
+  border: 1px solid blue;
+  color: pink;
+}

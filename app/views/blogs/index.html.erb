@@ -1,37 +1,31 @@
-<h1>Blogs</h1>
+<h1 class="section-title-no-margin">Blogs</h1>
 <div class="row">
-  <div class="col-md-9 col-sm-7 col-sm-12">
-    <%= link_to 'All blogs', blogs_path, class: 'btn btn-primary' %>
-    <% if current_user.role == 'admin' %>
-    <%= link_to 'New Blog', new_blog_path, class: 'btn btn-primary' %>
-    <% end %>
+  <div class="col-md-9 col-sm-7 col-xs-12">
+    <div class="btn-center">
+      <%= link_to 'Show all blogs', blogs_path, class: 'btn btn-info btn-margin-bottom' %>
+      <% if user_signed_in? %>
+      <%= link_to 'New Blog', new_blog_path, class: 'btn btn-outline-info btn-margin-bottom' %>
+      <% end %>
+    </div>
 
     <% @blogs.each do |blog| %>
-      <%= render "blog", :blog => blog %>
+      <%= render "blog", blog: blog %>
     <% end %>
   </div>
 
+  <div class="pagination">
+    <%= paginate @blogs %>
+  </div>
+
+
   <div class="col-md-3 col-sm-5 col-xs-12">
-  <% if current_user.role == 'admin' %>
-  <%= link_to 'Topics', topics_path, class: 'btn btn-info' %>
+  <% if user_signed_in? %>
+  <h1 class="section-title-no-margin"><%= link_to 'Topics', topics_path %></h1>
   <% end %>
 
   <% @topics.each do |topic| %>
-    <div class="card">
-      <div class="card-block">
-        <%= topic.title %>
-        <%= topic.id %>
-        <%= image_tag(topic.avatar_url.to_s, class: 'smallies') %>
-        <%= link_to 'See related blogs', blogs_path(topic_id: topic.id), class: 'btn btn-danger' %>
-        <% if current_user.role == 'admin' %>
-        <%= link_to fa_icon('pencil-square-o'), edit_topic_path(topic)  %>
-        <%= link_to fa_icon('trash'), topic, method: :delete, data: { confirm: 'Are you sure?' }  %>
-        <% end %>
-      </div>
-    </div>
+    <%= render "topic", topic: topic %>
   <% end %>
   </div>
+
 </div>
-  <hr>
-  <%= paginate @blogs %>
-  <hr>

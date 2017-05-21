@@ -1,1 +1,13 @@
-<div class="footer">Carole Pillette &copy; 2017</div>
+<footer>
+    <div class="footer-text">Copyright &copy; 2017 Carole Pillette | All rights reserved.
+       <div class=""> 
+        <% if current_user %>
+          <%= link_to fa_icon('sign-out'), destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
+        <% else %>
+          <%= link_to fa_icon('sign-in'), new_user_session_path, class: 'nav-item nav-link' %>
+        <% end %>
+        
+        </span>
+    </div>
+</footer>
+

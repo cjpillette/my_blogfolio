@@ -1,0 +1,19 @@
+@import "base/_variables";
+@import "base/_responsive";
+@import "base/_global";
+
+.red-project-title {
+  text-align:left;
+  color: $main-red;
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+
+.experience-company-name {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.experience-company-position {
+  text-align: left;
+}

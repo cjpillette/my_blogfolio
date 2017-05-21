@@ -1,12 +1,11 @@
 <header class="hero-box" id="hero-box">
+  <div class="hero-description">
+    <h2 class="hero-my-name">Carole Pillette</h2>
+    <h1 class="hero-description-title">Developer</h1>
+    <h1 class="hero-description-title">Engineer</h1>
+    <h1 class="hero-description-title">Artist</h1>
 
-<div class="hero-description">
-  <h2 class="hero-my-name">Carole Pillette</h2>
-  <h1 class="hero-description-title">Developer</h1>
-  <h1 class="hero-description-title">Engineer</h1>
-  <h1 class="hero-description-title">Artist</h1>
-
-  <div class="line-break"></div>
+    <div class="line-break"></div>
 
   </div>
 
@@ -24,75 +23,75 @@
 </header>
 
 <section>
-<div class="about-container" id="about-me">
-  <div class="about-in-desktop">
-    <div class="left-column-in-desktop">
-      <h1 class="section-title">About</h1>
-      <div class="about-description about-description-margin-top">
-        <p>&nbsp;I’m Carole, a professional developer and designer, living in Melbourne, Australia.</p>
-        <p class="paragraph-in-desktop">&nbsp;My work consists in building front-end and back-end applications using Ruby on Rails and the MEAN stack.</p>
-        <%= link_to "Learn more", about_me_path, :class => "learn-more-button" %>
-        <div class="about-arrow-down-in-desktop"></div>
-      </div>
-    </div>
-    <div class="right-column-in-desktop">
-      <div class="large-window"></div>
-    </div>
-  </div>
-  <div class="hide-middle-arrow-in-desktop">
-    <div class="arrow-down"></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="nicolas-container" id="my-art">
-    <div class="nicolas-in-desktop">
-      <div class="right-column-in-desktop">
-        <h1 class="section-title">PORTFOLIO</h1>
-        <div class="about-description nicolas-description-special-margin">
-          <p class="p-no-margin">&nbsp;Here are samples of the work I've done</p>
-          <div class="nicolas-arrow-down-in-desktop"></div>
-      </div>
-    </div>
-    <%= image_tag("class-photo.jpg", :alt => "cartoon class photo", :class => "project-screen-shot no-static-cartoon-in-desktop") %>
-     <div class="left-column-in-desktop">
-      <div class="carousel-in-desktop">
-        <div id="carouselCartoons" class="carousel" data-ride="carousel">
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <%= image_tag("class-photo.jpg", :alt => "class photo cartoon", :class => "d-block img-fluid") %>
-            </div>
-            <div class="carousel-item">
-              <%= image_tag("boysband.jpg", :alt => "trendy boys walking down the street cartoon", :class => "d-block img-fluid") %>
-            </div>
-            <div class="carousel-item">
-              <%= image_tag("perilous.jpg", :alt => "people hanging on for their life on a rope cartoon", :class => "d-block img-fluid") %>
-            </div>
-            <div class="carousel-item">
-              <%= image_tag("pirate.jpg", :alt => "pirate stealing info in hotel room cartoon", :class => "d-block img-fluid") %>
-            </div>
-            <div class="carousel-item">
-              <%= image_tag("trump.jpg", :alt => "kid crying in front of Donald Trump cartoon", :class => "d-block img-fluid") %>
-            </div>
-            <div class="carousel-item">
-              <%= image_tag("zoro-pizza.jpg", :alt => "boy eating pizza and passing zoro cartoon", :class => "d-block img-fluid") %>
-            </div>
-          </div>
-          <!-- <a class="carousel-control-prev" href="#carouselCartoons" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselCartoons" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-          </a> -->
+  <div class="about-container" id="about-me">
+    <div class="about-in-desktop">
+      <div class="left-column-in-desktop">
+        <h1 class="section-title">About</h1>
+        <div class="about-description about-description-margin-top">
+          <p>&nbsp;I’m Carole, a professional developer and designer, living in Melbourne, Australia.</p>
+          <p class="paragraph-in-desktop">&nbsp;My work consists in building front-end and back-end applications using Ruby on Rails and the MEAN stack.</p>
+          <%= link_to "Learn more", about_me_path, :class => "learn-more-button" %>
+          <div class="about-arrow-down-in-desktop"></div>
         </div>
+      </div>
+      <div class="right-column-in-desktop">
+        <div class="large-window"></div>
       </div>
     </div>
     <div class="hide-middle-arrow-in-desktop">
       <div class="arrow-down"></div>
     </div>
   </div>
-</div>
+</section>
+
+<section>
+  <div class="nicolas-container" id="my-art">
+      <div class="nicolas-in-desktop">
+        <div class="right-column-in-desktop">
+          <h1 class="section-title">PORTFOLIO</h1>
+          <div class="about-description nicolas-description-special-margin">
+            <p class="p-no-margin">&nbsp;Below are samples of the work I've done</p>
+           <!--  <div class="nicolas-arrow-down-in-desktop"></div> -->
+        </div>
+      </div>
+
+      <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% @portfolios.each_with_index do |portfolio, index| %>
+            <li data-target="#myCarousel1" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>"></li>
+          <% end %>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+          <% @portfolios.each_with_index do |portfolio, index| %>
+          <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
+            <%= image_tag (portfolio.avatar_url.to_s), class: 'd-block img-fluid' %><br>
+            <div class="carousel-content">
+              <p><%= link_to portfolio.title, portfolio_path(portfolio), class: 'white-text' %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+
+        <a class="carousel-control-prev" href="#myCarousel1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#myCarousel1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="hide-middle-arrow-in-desktop">
+    <!-- <div class="arrow-down"></div> -->
+  </div>
+
 </section>

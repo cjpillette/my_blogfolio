@@ -55,7 +55,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'carrierwave', '~> 0.11.2'
+gem 'mini_magick', '~> 4.7'
+gem 'carrierwave-aws', '~> 1.1'
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
-gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+gem 'kaminari'
 gem 'cancancan', '~> 1.16'
 gem 'redcarpet', '~> 3.4'
+gem "html_truncator", "~>0.2"

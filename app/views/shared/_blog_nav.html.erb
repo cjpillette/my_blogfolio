@@ -1,22 +1,28 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-blue">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-toggleable-md navbar-light bg-red">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">cP</a>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <%= link_to "Home", root_path, class: 'nav-item nav-link active' %>
-      <%= link_to "About", about_me_path, class: 'nav-item nav-link' %>
-      <%= link_to "Contact", contact_path, class: 'nav-item nav-link' %>
-      <%= link_to "Blog", blogs_path, class: 'nav-item nav-link' %>
-      <%= link_to "Vlog", vlogs_path, class: 'nav-item nav-link' %>
-      <%= link_to "Portfolio", portfolios_path, class: 'nav-item nav-link' %>
-      <% if current_user %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class: 'nav-item nav-link' %>
-        <%= link_to "Register", new_user_registration_path, class: 'nav-item nav-link' %>
-      <% end %>
-    </div>
+  <%= link_to image_tag('cpHome.svg'), root_path %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "About", about_me_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Contact", contact_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Blog", blogs_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Vlog", vlogs_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Portfolio", portfolios_path %>
+      </li>
+
+    </ul>
+
   </div>
 </nav>

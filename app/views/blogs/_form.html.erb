@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :topic %>
-    <%= f.collection_select :topic_id, Topic.all, :id, :title, prompt: "Select a topic" %>
-    </div>
+    <%= f.label :topic, class: "hidden" %>
+    <i class="fa fa-hand-o-down" aria-hidden="true"></i>
+    <%= f.collection_select :topic_id, Topic.all, :id, :title, prompt: '' %>
+  </div>
 
-  <div class="form-group">
+  <div class="form-group text-align-left">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group text-align-left">
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control', rows: '15' %>
-  </div> 
+  </div>
 
-  <div class="actions">
+  <div class="actions btn btn-warning save-button-bottom-margin remove-nasty-btn">
     <%= f.submit %>
   </div>
 <% end %>
-
