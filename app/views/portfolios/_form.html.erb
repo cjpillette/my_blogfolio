@@ -1,45 +1,47 @@
-<%= form_for(portfolio) do |f| %>
-  <% if portfolio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
+<div class="container-90 center">
+  <%= form_for(portfolio) do |f| %>
+    <% if portfolio.errors.any? %>
+      <div id="error_explanation" class="center">
+        <h2><%= pluralize(portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
 
-      <ul>
-      <% portfolio.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% portfolio.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group center">
+      <%= f.label :avatar, " Attach file", class: 'fa fa-cloud-upload btn btn-outline-success'  %>
+      <%= f.file_field :avatar %>
     </div>
-  <% end %>
 
-  <div class="form-group center">
-    <%= f.label :avatar, " Attach file", class: 'fa fa-cloud-upload btn btn-outline-success'  %>
-    <%= f.file_field :avatar %>
-  </div>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control', rows: '10' %>
-  </div>
-
-<div class="commands">
-  <div class="row">
-    <div class="col-6 center">
-    <div class="actions btn btn-success update-portfolio-button">
-      <%= f.submit %>
+    <div class="field text-align-left">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
     </div>
-  </div>
-  <% end %>
 
-    <div class="col-6 center">
-      <% if user_signed_in? %>
-        <%= link_to fa_icon('eye'), portfolio_path(@portfolio), class: 'btn btn-outline-secondary btn-outline-black' %>
-        <%= link_to fa_icon('arrow-left'), portfolios_path, class: 'btn btn-outline-secondary btn-outline-black' %>
-      <% end %>
+    <div class="field text-align-left description-title">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control', rows: '10' %>
+    </div>
+
+  <div class="commands">
+    <div class="row">
+      <div class="col-6 center">
+      <div class="actions btn btn-success white-text-on-button">
+        <%= f.submit %>
+      </div>
+    </div>
+    <% end %>
+
+      <div class="col-6 center">
+        <% if user_signed_in? %>
+          <%= link_to fa_icon('eye'), portfolio_path(@portfolio), class: 'btn btn-outline-secondary btn-outline-black' %>
+          <%= link_to fa_icon('arrow-left'), portfolios_path, class: 'btn btn-outline-secondary btn-outline-black' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -11,26 +11,26 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group text-align-left">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group text-align-left">
     <%= f.label :youtube_link %>
     <%= f.text_field :youtube_link, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group text-align-left">
     <%= f.label :description %>
     <%= f.text_area :description, class: 'form-control' %></textarea>
   </div>
 
-  <div class="form-group">
-    <%= f.label :nicolas_avatar, "Petit dessin" %>
-    <%= f.file_field :avatar, class: 'form-control' %>
+  <div class="form-group center">
+    <%= f.label :avatar, " Attach cartoon", class: 'fa fa-cloud-upload btn btn-outline-primary'  %>
+    <%= f.file_field :avatar %>
   </div>
 
-  <%= f.submit 'Save Vlog', class: 'btn btn-primary' %>
+  <%= f.submit 'Save Vlog', class: 'btn btn-primary save-button-margin' %>
 
 <% end %>
