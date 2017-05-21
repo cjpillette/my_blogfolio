@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @portfolios = Portfolio.all.order(created_at: :desc)
   end
 
   def contact
@@ -7,5 +8,5 @@ class PagesController < ApplicationController
 
   def about
   end
-  
+
 end

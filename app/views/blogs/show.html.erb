@@ -6,7 +6,7 @@
       <p class="blog-post-meta">Published <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago
         <% if user_signed_in? %>
         <%= link_to fa_icon('pencil-square-o'), edit_blog_path(@blog) %>
-        <%= link_to fa_icon('trash'), blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to fa_icon('trash'), @blog, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
       </p>
   </div>
