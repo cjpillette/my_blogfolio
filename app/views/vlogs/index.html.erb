@@ -9,13 +9,13 @@
           <%= link_to 'New Vlog', new_vlog_path, class: 'btn btn-outline-info btn-margin-bottom' %>
           <% end %>
         </div>
-
-
-          <% @vlogs.each do |vlog| %>
-          <%= render 'vlog', vlog: vlog %>
-          <% end %>
-
     </div>
+
+      <div class="card-deck">
+            <% @vlogs.each do |vlog| %>
+            <%= render 'vlog', vlog: vlog %>
+            <% end %>
+      </div>
 
   <div class="pagination">
     <%= paginate @vlogs %>

@@ -54,10 +54,6 @@ p {
   margin-bottom: 0;
 }
 
-footer {
-  clear: both;
-}
-
 .hidden {
   display: none;
 }
@@ -77,4 +73,12 @@ footer {
 
 .white-text {
   color: white;
+}
+
+.no-right-padding {
+  padding-right: 0;
+}
+
+.no-left-padding {
+  padding-left: 0;
 }

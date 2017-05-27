@@ -3,13 +3,21 @@
 
 @media screen and (min-width: 500px){
 
-  .carousel-container {
-    margin-right: 0;
-  }
+.carousel-container {
+  margin-right: 0;
+}
 
-  .carousel-item {
-    height: 450px;
-  }
+.carousel-item {
+  height: 450px;
+}
+
+.pagination-sm-md-lg {
+  display: hidden;
+}
+
+.pagination-xs {
+  display: visible;
+}
 
 
 }
@@ -18,14 +26,25 @@
 
 @media screen and (min-width: 768px){
 
+.large-window {
+  height: 500px;
+  width: 500px;
+}
 
+.pagination-iPad-and-above {
+  display: visible;
+}
+
+.pagination-xs {
+  display: none;
+}
 
 }
 
 /* Responsive for Desktop*/
 @media screen and (min-width: 1024px){
 
-  
+
 
 
 }
