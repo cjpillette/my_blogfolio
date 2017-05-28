@@ -1,12 +1,13 @@
 <div class="container-90 center">
   <div class="row">
     <div class="col-xs-12 center">
+      <h2 class="text-align-left"><%= portfolio.title %></h2>
       <%= image_tag(portfolio.avatar_url.to_s, style: "max-width: 100%") %>
     </div>
 
   <div class="container-90 center">
     <div class="col-xs-12 center title-padding-top">
-      <h2><%= portfolio.title %></h2>
+
 
     <div class="center">
       <% if user_signed_in? %>

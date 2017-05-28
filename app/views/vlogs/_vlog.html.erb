@@ -1,28 +1,27 @@
+<div class="card">
+  <figure>
+  <%= image_tag(vlog.avatar_url.to_s, style: "width: 100%;border-bottom: 1px solid black;") %>
+  <figcaption class="container-figcaption-vlog">
+    <h4 class="center"><%= vlog.title %></h4>
+    <p>
+      <div class="row">
+        <div class="col-5">
+          <% if user_signed_in? %>
+          <%= link_to fa_icon('eye'), vlog_path(vlog) %>
+          <%= link_to fa_icon('pencil-square-o'), edit_vlog_path(vlog) %>
+          <%= link_to fa_icon('trash'), vlog, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+        <div class="col-2">
+          <%= link_to vlog.youtube_link, target: :_blank do %>
+          <%= fa_icon "youtube" %>
+          <% end %>
+        </div>
+      </p>
+    </div>
 
-  <div class="card">
-    <figure>
-    <%= image_tag(vlog.avatar_url.to_s, style: "width: 100%;border-bottom: 1px solid black;") %>
-    <figcaption>
-      <h4 class="center"><%= vlog.title %></h4>
-      <p>
-        <div class="row">
-          <div class="col-5">
-            <% if user_signed_in? %>
-            <%= link_to fa_icon('eye'), vlog_path(vlog) %>
-            <%= link_to fa_icon('pencil-square-o'), edit_vlog_path(vlog) %>
-            <%= link_to fa_icon('trash'), vlog, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </div>
-          <div class="col-2">
-            <%= link_to vlog.youtube_link, target: :_blank do %>
-            <%= fa_icon "youtube" %>
-            <% end %>
-          </div>
-        </p>
-      </div>
+      <p><%= markdown(vlog.description) %></p>
 
-        <p><%= markdown(vlog.description) %></p>
-
-    </figcaption>
-  </figure>
-  </div>
+  </figcaption>
+</figure>
+</div>

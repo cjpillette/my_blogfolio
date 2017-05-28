@@ -38,7 +38,6 @@
         height: auto;
       }
       figcaption{
-        padding: 10px;
         margin: 0;
         display: block;
       }
@@ -46,4 +45,12 @@
     }
 
   }
+}
+
+.container-figcaption-vlog {
+  width: 90%;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
