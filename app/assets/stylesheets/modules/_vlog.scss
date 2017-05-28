@@ -1,0 +1,49 @@
+@import "base/_variables";
+@import "base/_responsive";
+@import "base/_global";
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#card-lists{
+  font-family: arial;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  .card{
+    float: left;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 1.75438%;
+    overflow: hidden;
+
+    figure{
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      display: block;
+      img{
+        width: 100%;
+        height: auto;
+      }
+      figcaption{
+        padding: 10px;
+        margin: 0;
+        display: block;
+      }
+
+    }
+
+  }
+}

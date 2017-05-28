@@ -39,12 +39,31 @@
   display: none;
 }
 
+#card-lists{
+  .card {
+    width: 31%;
+  }
+  &:nth-child(3n + 1){
+    margin-left: 0;
+  }
+}
+
+
+
 }
 
 /* Responsive for Desktop*/
 @media screen and (min-width: 1024px){
 
 
+  #card-lists{
+    .card {
+      width: 19.7368%;
+    }
+    &:nth-child(4n + 1){
+      margin-left: 0;
+    }
+  }
 
 
 }

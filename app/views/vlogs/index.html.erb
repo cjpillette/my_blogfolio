@@ -11,11 +11,11 @@
         </div>
     </div>
 
-      <div class="card-deck">
+      <section id="card-lists">
             <% @vlogs.each do |vlog| %>
             <%= render 'vlog', vlog: vlog %>
             <% end %>
-      </div>
+      </section>
 
   <div class="pagination">
     <%= paginate @vlogs %>

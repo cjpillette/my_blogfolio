@@ -1,9 +1,10 @@
 
   <div class="card">
-    <%= image_tag(vlog.avatar_url.to_s, style: "width: 100%") %>
-    <div class="card-block">
-      <h4 class="card-title"><%= vlog.title %></h4>
-      <p class="card-text">
+    <figure>
+    <%= image_tag(vlog.avatar_url.to_s, style: "width: 100%;border-bottom: 1px solid black;") %>
+    <figcaption>
+      <h4 class="center"><%= vlog.title %></h4>
+      <p>
         <div class="row">
           <div class="col-5">
             <% if user_signed_in? %>
@@ -18,8 +19,10 @@
             <% end %>
           </div>
         </p>
-        <p class="card-text"><%= markdown(vlog.description) %></p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
-    </div>
+
+        <p><%= markdown(vlog.description) %></p>
+
+    </figcaption>
+  </figure>
   </div>
