@@ -42,14 +42,119 @@
 @media screen and (min-width: 1024px){
 
 
-  #card-lists{
-    .card {
-      width: 19.7368%;
-    }
-    &:nth-child(4n + 1){
-      margin-left: 0;
-    }
-  }
+// #card-lists{
+//   .card {
+//     width: 23%;
+//   }
+//   &:nth-child(4n + 1){
+//     margin-left: 0;
+//   }
+// }
+.navbar-nav {
+  margin-right: 0;
+  right:20px;
+  position: absolute;
+}
 
+div.container
+{
+    font-family: Lato;
+    margin: 0 auto;
+	  padding: 3em 3em;
+	  text-align: center;
+}
+
+div.container a
+{
+    color: black;
+    text-decoration: none;
+    font: 20px Lato;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+div.pullUpDown a:before, div.pullUpDown a:after
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    content: '';
+    background: $main-red;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+div.pullUpDown a:before
+{
+    top: 0px;
+}
+
+div.pullUpDown a:after
+{
+    bottom: 0px;
+}
+
+div.pullUpDown a:hover:before, div.pullUpDown a:hover:after
+{
+    height: 100%;
+}
+
+
+.navbar-nav > .nav-item {
+  float: right;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.read-more-button {
+  margin-bottom: 30px;
+}
+
+.developer-drawing {
+  width: 18rem;
+  height: 14rem;
+  background-size: 60% 60%;
+  right: 25%;
+  top: 36%;
+}
+
+.engineer-drawing {
+  width: 18rem;
+  height: 14rem;
+  background-size: 80% 80%;
+  left: 20%;
+  top: 38%;
+}
+
+.artist-drawing {
+  width: 18rem;
+  height: 14rem;
+  background-size: 80% 80%;
+  left: 40%;
+  top: 30%;
+}
+
+.container-login {
+  width: 50%;
+}
+
+.login-card {
+  width: 50%;
+  margin-left: 0;
+  margin-top: 50px;
+}
+
+.carousel-item {
+  height: 600px;
+}
+
+.portfolio-title {
+  margin-left : -130px;
+}
 
 }

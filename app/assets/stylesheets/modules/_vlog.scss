@@ -10,6 +10,7 @@
 
 #card-lists{
   font-family: arial;
+  margin-top: 10px;
   width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22,6 +23,7 @@
     float: left;
     margin-bottom: 15px;
     border: 1px solid #ccc;
+    box-shadow: 0 2px 2px 0 rgba(247, 30, 30, 0.2), 0 2px 2px 0 rgba(247, 30, 30, 0.19);
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -51,6 +53,6 @@
   width: 90%;
   padding-top: 10px;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 0;
   padding-bottom: 10px;
 }

@@ -1,14 +1,11 @@
 <div class="container-90 center">
   <div class="row">
-    <div class="col-xs-12 center">
-      <h2 class="text-align-left"><%= portfolio.title %></h2>
-      <%= image_tag(portfolio.avatar_url.to_s, style: "max-width: 100%") %>
-    </div>
+      <div class="col-xs-12 center">
+        <h2 class="text-align-left portfolio-title"><%= portfolio.title %></h2>
+        <%= image_tag(portfolio.avatar_url.to_s, style: "max-width: 100%") %>
+      </div>
 
-  <div class="container-90 center">
     <div class="col-xs-12 center title-padding-top">
-
-
     <div class="center">
       <% if user_signed_in? %>
       <%= link_to fa_icon('eye'), portfolio_path(portfolio) %>
@@ -16,12 +13,10 @@
       <%= link_to fa_icon('trash'), portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     </div>
-
     <%= markdown(HTML_Truncator.truncate(portfolio.description, 50)) %>
     <%= link_to 'Read more', portfolio_path(portfolio), class: 'btn btn-secondary read-more-button btn-just-shadow' %>
-
     </div>
   </div>
-  </div>
+
 </div>
 <hr>
