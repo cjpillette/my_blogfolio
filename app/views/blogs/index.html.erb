@@ -1,3 +1,4 @@
+<div class="container-90 center">
 <h1 class="section-title-no-margin">Blogs</h1>
 <div class="row">
   <div class="col-md-9 col-sm-7 col-xs-12">
@@ -13,19 +14,27 @@
     <% end %>
   </div>
 
-  <div class="pagination">
+
+<!-- <div class="pagination">
     <%= paginate @blogs %>
-  </div>
+</div> -->
 
 
   <div class="col-md-3 col-sm-5 col-xs-12">
-  <% if user_signed_in? %>
-  <h1 class="section-title-no-margin"><%= link_to 'Topics', topics_path %></h1>
-  <% end %>
+    <div class="container-95">
+      <% if user_signed_in? %>
+      <h1 class="section-title-no-margin"><%= link_to 'Topics', topics_path %></h1>
+      <% end %>
+    </div>
 
   <% @topics.each do |topic| %>
     <%= render "topic", topic: topic %>
   <% end %>
   </div>
 
+</div>
+
+
+<div class="pagination">
+    <%= paginate @blogs %>
 </div>

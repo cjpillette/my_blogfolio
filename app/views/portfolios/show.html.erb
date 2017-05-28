@@ -1,12 +1,12 @@
 <!-- <%= render 'portfolio', portfolio: @portfolio %> -->
 
 <div class="row">
-  <div class="col-xs-12 col-sm-6">
+  <div class="col-xs-12 center">
     <%= image_tag(@portfolio.avatar_url.to_s, style: "max-width: 100%") %>
   </div>
 
 <div class="container-90 center">
-  <div class="col-xs-12 col-sm-6 center title-padding-top">
+  <div class="col-xs-12 title-padding-top">
     <h2><%= @portfolio.title %></h2>
 
   <div class="center">
