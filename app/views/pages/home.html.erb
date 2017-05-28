@@ -51,7 +51,7 @@
           <h1 class="section-title">PORTFOLIO</h1>
           <div class="about-description nicolas-description-special-margin">
             <p class="p-no-margin">&nbsp;Below are samples of the work I've done</p>
-           <!--  <div class="nicolas-arrow-down-in-desktop"></div> -->
+
         </div>
       </div>
 
@@ -67,7 +67,7 @@
           <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
             <%= image_tag (portfolio.avatar_url.to_s), class: 'd-block img-fluid' %><br>
             <div class="carousel-content">
-              <p><%= link_to portfolio.title, portfolio_path(portfolio), class: 'white-text' %></p>
+              <p><%= link_to portfolio.title, portfolio_path(portfolio) %></p>
             </div>
           </div>
           <% end %>
@@ -91,7 +91,7 @@
   </div>
 
   <div class="hide-middle-arrow-in-desktop">
-    <!-- <div class="arrow-down"></div> -->
+
   </div>
 
 </section>
