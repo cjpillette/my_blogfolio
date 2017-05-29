@@ -70,6 +70,6 @@ class VlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vlog_params
-      params.require(:vlog).permit(:title, :description, :youtube_link, :avatar, :thumbnail)
+      params.require(:vlog).permit(:title, :description, :youtube_link, :avatar)
     end
 end
