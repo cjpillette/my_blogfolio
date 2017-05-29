@@ -63,3 +63,5 @@ gem 'kaminari'
 gem 'cancancan', '~> 1.16'
 gem 'redcarpet', '~> 3.4'
 gem "html_truncator", "~>0.2"
+
+ruby "2.4.0"
