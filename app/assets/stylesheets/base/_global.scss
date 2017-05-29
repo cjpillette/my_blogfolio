@@ -54,6 +54,10 @@ p {
   margin-bottom: 0;
 }
 
+footer {
+  padding-top: 15px;
+}
+
 .hidden {
   display: none;
 }
@@ -81,4 +85,8 @@ p {
 
 .no-left-padding {
   padding-left: 0;
+}
+
+.no-left-margin {
+  margin-left: 0;
 }

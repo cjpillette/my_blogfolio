@@ -3,4 +3,5 @@ class Vlog < ApplicationRecord
   paginates_per 12
 
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :thumbnail, AvatarUploader
 end
