@@ -31,6 +31,11 @@
     <%= f.file_field :avatar %>
   </div>
 
+  <div class="form-group center">
+    <%= f.label :thumbnail, " Attach video thumbnail", class: 'fa fa-cloud-upload btn btn-outline-info'  %>
+    <%= f.file_field :thumbnail %>
+  </div>
+
   <%= f.submit 'Save Vlog', class: 'btn btn-primary save-button-margin remove-nasty-btn' %>
 
 <% end %>
