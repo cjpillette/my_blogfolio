@@ -1,6 +1,6 @@
 <div class="card">
   <figure>
-  <%= image_tag(vlog.thumbnail_url.to_s, style: "width: 100%;border-bottom: 1px solid black;") %>
+  <%= image_tag(vlog.thumbnail_url.to_s, style: "width: 100%;") %>
   <figcaption class="container-figcaption-vlog">
     <h4 class="center"><%= vlog.title %></h4>
     <p>
@@ -29,6 +29,6 @@
 
       <p><%= markdown(vlog.description) %></p>
   </figcaption>
-  <%= link_to image_tag(vlog.avatar_url.to_s, style: "width: 100%;border-bottom: 1px solid black;"),vlog_path(vlog), style:'margin-left:0; padding-left:0;' %>
+  <%= link_to image_tag(vlog.avatar_url.to_s, style: "width: 100%;"),vlog_path(vlog), style:'margin-left:0; padding-left:0;' %>
 </figure>
 </div>
