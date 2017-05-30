@@ -25,8 +25,8 @@
           <% end %>
       </div>
     </p>
+    <p class="center"><%= vlog.description %></p>
 
-      <p class="center"><%= markdown(vlog.description) %></p>
   </figcaption>
   <%= link_to image_tag(vlog.avatar_url.to_s, style: "width: 100%;"),vlog_path(vlog), style:'margin-left:0; padding-left:0;' %>
 </figure>

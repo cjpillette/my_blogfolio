@@ -25,6 +25,14 @@
   cursor: pointer;
 }
 
+.nav-item.active {
+  background-color: $main-red;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transform: translateY(-10px);
+}
+
 nav .navbar {
   border-bottom: 1px solid black;
 }

@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def active_class(link_path)
+    current_page?(link_path) ? "active" : ""
+  end
+
   def markdown(text)
      options = {
       filter_html:     true,
