@@ -38,7 +38,6 @@
 
       <div class="col-6 center">
         <% if user_signed_in? %>
-          <%= link_to fa_icon('eye'), portfolio_path(@portfolio), class: 'btn btn-outline-secondary btn-outline-black' %>
           <%= link_to fa_icon('arrow-left'), portfolios_path, class: 'btn btn-outline-secondary btn-outline-black' %>
         <% end %>
       </div>
