@@ -15,8 +15,9 @@
     <%= link_to fa_icon('trash'), @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
   </div>
-
-  <p><%= markdown(@portfolio.description) %></p>
+  <div class="portfolio-p">
+    <p><%= markdown(@portfolio.description) %></p>
+  </div>
 
   </div>
   <%= link_to "Back to portfolio", portfolios_path, class: 'btn btn-secondary' %>

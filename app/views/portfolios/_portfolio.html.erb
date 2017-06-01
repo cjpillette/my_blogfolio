@@ -13,7 +13,9 @@
       <%= link_to fa_icon('trash'), portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     </div>
-    <%= markdown(HTML_Truncator.truncate(portfolio.description, 50)) %>
+    <div class="portfolio-p">
+      <%= markdown(HTML_Truncator.truncate(portfolio.description, 50)) %>
+    </div>
     <%= link_to 'Read more', portfolio_path(portfolio), class: 'btn btn-secondary read-more-button btn-just-shadow' %>
     </div>
   </div>
