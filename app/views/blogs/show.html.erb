@@ -22,7 +22,9 @@
       </div>
 
       <div class="col-12 col-md-auto">
-      <p><%= markdown(@blog.body) %></p>
+        <div class="truncator-wrapper blog-p">
+          <%= markdown(@blog.body) %>
+        </div>
       </div>
     <%= link_to "Back to blogs", blogs_path, class: 'btn btn-secondary' %>
 </div>

@@ -58,6 +58,20 @@ footer {
   padding-top: 15px;
 }
 
+pre {
+  text-align: left;
+  background-color: $light-grey;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  white-space: pre-wrap;       /* soft wrap */
+  white-space: -moz-pre-wrap;  /* soft wrap */
+  white-space: -pre-wrap;      /* soft wrap */
+  white-space: -o-pre-wrap;    /* soft wrap */
+  word-wrap: break-word;      /* soft wrap */
+}
+
 .hidden {
   display: none;
 }
