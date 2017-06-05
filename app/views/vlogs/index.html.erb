@@ -3,7 +3,23 @@
         <div class="col-lg-12">
             <h1 class="section-title-no-margin">Vlogs</h1>
         </div>
-
+        <div class="container-90 center">
+          <div class="row">
+            <div class="col-4">
+              <%= image_tag('nicolas_sits_left', style:"width=50px") %>
+            </div>
+            <div class="col-4">
+              <p class="center">I've been documenting my journey in becoming a developer here in Melbourne.</p>
+            </div>
+            <div class="col-4">
+              <%= image_tag('nicolas_sits_right', style:"width=50px") %>
+            </div>
+          </div>
+          <div class="row">
+            <p> Each day I'm making a short vlog about my life as a software engineer, which consists in learning new technologies at a bootcamp, concepts and attending meetups and other various interesting events, as well as helping others in their coding journey. </p>
+            <p>Also, I couldn't resist the temptation to illustrate each vlog with its little doodle. Life is so much better with cartoons!</p>
+          </div>
+        </div>
         <div class="btn-center center">
           <% if user_signed_in? %>
           <%= link_to 'New Vlog', new_vlog_path, class: 'btn btn-outline-info btn-margin-bottom' %>
